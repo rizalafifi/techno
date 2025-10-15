@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak - DuaPoetriDesign</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdfdfd;
+      margin: 0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1abc9c, #16a085, #2c3e50);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid white;
+    }
+
+    .contact {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: #0077ff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #0077ff;
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #005fcc;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 1px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>✨ DuaPoetriDesign ✨</h1>
+  <p class="alamat">📍 Jl. Soekarno-Hatta No 129 Magelang, Jawa Tengah</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="contact">
+    <h2>Hubungi Kami</h2>
+    <p>Ingin konsultasi atau pesan desain? Kirim pesan langsung ke WhatsApp kami!</p>
+
+    <form id="waForm">
+      <input type="text" id="nama" placeholder="Nama Anda" required>
+      <input type="text" id="nomor" placeholder="Nomor HP Anda" required>
+      <textarea id="pesan" placeholder="Pesan Anda" required></textarea>
+      <button type="submit">Kirim via WhatsApp</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 DuaPoetriDesign — Menghidupkan Ide, Mewujudkan Visual</p>
+</footer>
+
+<script>
+  // --- 1️⃣ Isi otomatis dari parameter URL ---
+  const params = new URLSearchParams(window.location.search);
+  const service = params.get('service'); // ambil ?service=...
+
+  if (service) {
+    const pesanField = document.getElementById('pesan');
+    pesanField.value = `Saya ingin memesan layanan ${service}.`;
+  }
+
+  // --- 2️⃣ Kirim ke WhatsApp ---
+  document.getElementById('waForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nama = document.getElementById('nama').value.trim();
+    const nomor = document.getElementById('nomor').value.trim();
+    const pesan = document.getElementById('pesan').value.trim();
+
+    if (!nama || !nomor || !pesan) {
+      alert('Harap isi semua kolom terlebih dahulu.');
+      return;
+    }
+
+    const nomorWA = "6282138400101"; // Ganti sesuai nomor WA bisnis
+    const teks = `Halo Dua Putri Design!%0A`
+      + `Saya ${encodeURIComponent(nama)}.%0A`
+      + `Nomor HP: ${encodeURIComponent(nomor)}.%0A`
+      + `Pesan: ${encodeURIComponent(pesan)}`;
+
+    const url = `https://wa.me/${nomorWA}?text=${teks}`;
+    window.open(url, '_blank');
+  });
+</script>
+
+</body>
+</html>
+

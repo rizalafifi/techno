@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desain Konten Media Sosial - DuaPoetriDesign</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #1abc9c, #16a085, #2c3e50);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .service-detail {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .service-detail h2 {
+      color: #9c27b0;
+    }
+    .service-detail p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .service-detail ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin: 1rem auto;
+      max-width: 450px;
+    }
+    .service-detail ul li {
+      margin: 0.6rem 0;
+      padding-left: 28px;
+      position: relative;
+    }
+    .service-detail ul li::before {
+      content: "🎨";
+      position: absolute;
+      left: 0;
+      color: #9c27b0;
+    }
+    .service-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .service-icons img {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      background: #fafafa;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .service-icons img:hover {
+      transform: scale(1.1);
+    }
+    .btn-service {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #9c27b0;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .btn-service:hover {
+      background: #7b1fa2;
+    }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 1px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>✨ DuaPoetriDesign ✨</h1>
+  <p class="alamat">📍 Jl. Soekarno-Hatta No 129 Magelang, Jawa Tengah</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="service-detail">
+    <h2>Desain Konten Media Sosial</h2>
+    <p>Tingkatkan engagement dengan desain sosial media yang menarik & konsisten.</p>
+
+    <!-- Ikon layanan -->
+    <div class="service-icons">
+      <img src="images/feed.jpg" alt="Feed Instagram">
+      <img src="images/story.png" alt="Story Sosial Media">
+      <img src="images/promo.png" alt="Banner Promosi">
+      <img src="images/produk.png" alt="Template Produk">
+    </div>
+
+    <!-- Daftar layanan -->
+    <ul>
+      <li>Feed & Story Instagram</li>
+      <li>Banner promosi Facebook / WhatsApp</li>
+      <li>Template promosi produk & event</li>
+      <li>Paket desain bulanan</li>
+    </ul>
+
+    <!-- Tombol Pesan -->
+    <a href="contact.html?service=Konten%20%26%20Sosmed" class="btn-service" id="btnPesan">
+      Pesan Layanan Ini
+    </a>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 DuaPoetriDesign — Menghidupkan Ide, Mewujudkan Visual</p>
+</footer>
+
+</body>
+</html>
